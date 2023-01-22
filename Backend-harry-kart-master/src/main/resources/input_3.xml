@@ -26,14 +26,14 @@
         <loop number="1">
             <lane number="1">0</lane>
             <lane number="2">0</lane>
-            <lane number="3">1</lane>
-            <lane number="4">3</lane>
+            <lane number="3">4</lane>
+            <lane number="4">4</lane>
         </loop>
         <loop number="2">
-            <lane number="1">10</lane>
-            <lane number="2">0</lane>
-            <lane number="3">0</lane>
-            <lane number="4">1</lane>
+            <lane number="1">0</lane>
+            <lane number="2">-5</lane>
+            <lane number="3">4</lane>
+            <lane number="4">4</lane>
         </loop>
     </powerUps>
 </harryKart>

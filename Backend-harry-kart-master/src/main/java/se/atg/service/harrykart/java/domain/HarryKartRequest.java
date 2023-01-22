@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

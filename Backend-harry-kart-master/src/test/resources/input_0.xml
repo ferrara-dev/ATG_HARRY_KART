@@ -21,19 +21,24 @@
             <name>WAIKIKI SILVIO</name>
             <baseSpeed>10</baseSpeed>
         </participant>
+        <participant>
+            <lane>5</lane>
+            <name>HELLO HELLO</name>
+            <baseSpeed>50</baseSpeed>
+        </participant>
     </startList>
     <powerUps>
         <loop number="1">
-            <lane number="1">1</lane>
-            <lane number="2">1</lane>
-            <lane number="3">0</lane>
-            <lane number="4">-2</lane>
+            <lane number="1">0</lane>
+            <lane number="2">0</lane>
+            <lane number="3">4</lane>
+            <lane number="4">4</lane>
         </loop>
         <loop number="2">
-            <lane number="1">1</lane>
-            <lane number="2">-1</lane>
-            <lane number="3">2</lane>
-            <lane number="4">-2</lane>
+            <lane number="1">0</lane>
+            <lane number="2">-5</lane>
+            <lane number="3">4</lane>
+            <lane number="4">4</lane>
         </loop>
     </powerUps>
 </harryKart>

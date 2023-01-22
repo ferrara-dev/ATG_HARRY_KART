@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se.atg.service.harrykart.java.domain.HarryKartRequest;
 import se.atg.service.harrykart.java.domain.PlayHarryKartResponse;
-import se.atg.service.harrykart.java.domain.exception.ValidationException;
 import se.atg.service.harrykart.java.service.RankingService;
 
 
@@ -20,7 +19,6 @@ import se.atg.service.harrykart.java.service.RankingService;
 @RequestMapping("/java/api")
 @RequiredArgsConstructor
 public class HarryKartController {
-    private static final Logger logger = LoggerFactory.getLogger(HarryKartController.class);
 
     @Autowired
     private RankingService rankingService;
@@ -30,11 +28,4 @@ public class HarryKartController {
         return ResponseEntity.ok(rankingService.computeRanking(request));
     }
 
-
-
-    public void validateRequestBody(HarryKartRequest requestBody) {
-        if(requestBody.getNumberOfLoops() <= 0){
-            throw new ValidationException("Number of loops must be larger than 0");
-        }
-    }
 }
