@@ -1,4 +1,39 @@
 # Harry-Kart
+
+## Solution
+  The solution ranks horses by calculating their final race time. 
+  
+  The time for each lap is calculated as distance divided by speed.
+  If two participants have the same final race time, they are assigned the same ranking.
+  
+  Example response  with shared ranking: 
+```json
+{
+  "ranking": [
+    {
+      "position": 1,
+      "horse": "HERCULES BOKO"
+    },
+    {
+      "position": 1,
+      "horse": "WAIKIKI SILVIO"
+    },
+    {
+      "position": 2,
+      "horse": "TIMETOBELUCKY"
+    }
+  ]
+}
+```
+  If the speed is less than or equals to zero when the powerup/down has been added, it means that the horse has stopped.
+  A horse stopping before the race is over is not expected and therefore an error is thrown.
+
+   
+
+### Documentation : 
+http://localhost:8080/swagger-ui.html#/harry-kart-controller/playHarryKartUsingPOST
+
+
 ## Description
 Harry-Kart in a special kind of horse racing.
 
