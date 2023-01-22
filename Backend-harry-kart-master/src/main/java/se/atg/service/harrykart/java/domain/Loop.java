@@ -8,18 +8,15 @@
 
 package se.atg.service.harrykart.java.domain;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import lombok.*;
 
 import javax.xml.bind.annotation.*;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "loopType", propOrder = {
-    "lane"
-})
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -28,61 +25,26 @@ import java.util.List;
 @ToString
 public class Loop
 {
+    @JacksonXmlElementWrapper(useWrapping = false)
+    protected List<Lane> lane;
 
-    @XmlElement(required = true)
-    protected List<LaneType> lane;
     @XmlAttribute(name = "number")
     protected int number;
 
-    /**
-     * Gets the value of the lane property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lane property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLane().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link LaneType }
-     * 
-     * 
-     */
-    public List<LaneType> getLane() {
+
+    public List<Lane> getLane() {
         if (lane == null) {
-            lane = new ArrayList<LaneType>();
+            lane = new ArrayList<Lane>();
         }
         return this.lane;
     }
 
-    /**
-     * Gets the value of the number property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
+
     public int getNumber() {
         return number;
     }
 
-    /**
-     * Sets the value of the number property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+
     public void setNumber(int value) {
         this.number = value;
     }

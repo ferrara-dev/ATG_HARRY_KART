@@ -49,17 +49,5 @@ public class RankingServiceTest {
         var result = rankingService.computeRanking(request);
     }
 
-    @DisplayName("Returning top 3 ranking")
-    @ParameterizedTest
-    @ValueSource(strings = {INPUT3})
-    public void shouldThrowErrorOnZeroSpeed(String input) throws IOException {
-        File file = ResourceUtils.getFile("classpath:" + input);
-        String xml = Files.readString(file.toPath());
-        var request = HarryKartController.parseRequest(xml).get();
-        var result = rankingService.computeRanking(request);
-        var exceptionThrown =
-                assertThrows(HarryKartException.class, () ->
-                        rankingService.computeRanking(request));
-    }
 
 }

@@ -1,6 +1,5 @@
 package se.atg.service.harrykart.java.service;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import se.atg.service.harrykart.java.domain.*;
 
@@ -27,13 +26,16 @@ public class RankingService {
         raceResults.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
-                .map(participantEntry -> ParticipantRanking.builder()
-                         .position(position.incrementAndGet())
-                         .horse(startList.getParticipant().stream()
-                                 .filter(p -> p.getLane() == (participantEntry.getKey()))
-                                 .findFirst().get().getName())
-                         .finalTime(participantEntry.getValue())
-                         .build())
+                .map(participantEntry -> {
+
+                    return   ParticipantRanking.builder()
+                            .position(position.incrementAndGet())
+                            .horse(startList.getParticipant().stream()
+                                    .filter(p -> p.getLane() == (participantEntry.getKey()))
+                                    .findFirst().get().getName())
+                            .finalTime(participantEntry.getValue())
+                            .build();
+                        })
                 .forEachOrdered(participantRanking -> rankings.add(participantRanking));
 
         return PlayHarryKartResponse.builder()
@@ -49,7 +51,6 @@ public class RankingService {
         for (int lap = 0; lap < numberOfLoops; lap++) {
             List<Participant> participantList =  startList.getParticipant();
             for (Participant participant : participantList) {
-
                 int speed = participant.getBaseSpeed();
                 int lane = participant.getLane();
                 if(!disqualifiedLanes.contains(lane)){

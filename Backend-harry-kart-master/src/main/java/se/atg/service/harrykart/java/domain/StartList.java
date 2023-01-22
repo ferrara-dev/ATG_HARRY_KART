@@ -8,6 +8,8 @@
 
 package se.atg.service.harrykart.java.domain;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,6 +47,7 @@ public class StartList
 {
 
     @XmlElement(required = true, name = "participant")
+    @JacksonXmlElementWrapper(useWrapping = false)
     protected List<Participant> participant;
 
 

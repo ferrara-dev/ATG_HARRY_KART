@@ -11,12 +11,6 @@ import java.math.BigInteger;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "participantType",
-        propOrder = {
-        "lane",
-        "name",
-        "baseSpeed"
-})
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -33,39 +27,16 @@ public class Participant {
     protected int baseSpeed;
 
 
-    /**
-     * Gets the value of the lane property.
-     *
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *
-     */
     public int getLane() {
         return lane;
     }
 
-    /**
-     * Sets the value of the lane property.
-     *
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *
-     */
+
     public void setLane(int value) {
         this.lane = value;
     }
 
 
-    /**
-     * Gets the value of the name property.
-     *
-     * @return
-     *     possible object is
-     *     {@link String }
-     *
-     */
     public String getName() {
         return name;
     }

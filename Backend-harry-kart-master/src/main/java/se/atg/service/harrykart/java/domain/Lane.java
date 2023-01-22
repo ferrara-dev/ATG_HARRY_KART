@@ -8,30 +8,36 @@
 
 package se.atg.service.harrykart.java.domain;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.*;
 import javax.xml.bind.annotation.*;
-import java.math.BigInteger;
-
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "laneType", propOrder = {
-    "value"
-})
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
 @ToString
-
-public class LaneType
+public class Lane
 {
-
+    @JacksonXmlProperty
     @XmlValue
-    protected int value;
+    private Integer value;
+
     @XmlAttribute(name = "number")
-    protected int number;
+    private int number;
 
 
+    public Integer getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = Integer.parseInt(value);
+    }
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

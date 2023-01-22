@@ -1,18 +1,19 @@
 package se.atg.service.harrykart.java.domain.exception;
 
+import lombok.Getter;
+
+@Getter
 public class HarryKartException extends RuntimeException{
-    int errorCode;
+    private int errorCode;
+    private String errorMessage;
 
-    public HarryKartException() {
-    }
+    private String details;
 
-    public HarryKartException(String message) {
-        super(message);
-    }
-
-    public HarryKartException(String message, int errorCode) {
+    public HarryKartException(String message,String details, int errorCode) {
         super(message);
         this.errorCode = errorCode;
+        this.details = details;
+        this.errorMessage = message;
     }
 
 }
