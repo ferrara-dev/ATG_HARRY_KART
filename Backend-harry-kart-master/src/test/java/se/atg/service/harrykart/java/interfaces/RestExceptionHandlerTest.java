@@ -40,6 +40,4 @@ public class RestExceptionHandlerTest {
         assertEquals( errorResponse.getBody().getDetails(), "VALIDATION_EXCEPTION");
         assertEquals(errorResponse.getStatusCode(), HttpStatus.BAD_REQUEST);
     }
-
-
 }
