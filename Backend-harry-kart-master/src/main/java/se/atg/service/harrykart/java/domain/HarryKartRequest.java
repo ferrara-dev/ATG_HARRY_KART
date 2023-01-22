@@ -15,9 +15,9 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class HarryKartRequest implements Serializable {
     @XmlElement(required = true, name = "numberOfLoops")
-    protected int numberOfLoops;
+    private int numberOfLoops;
     @XmlElement(required = true, name = "startList")
-    protected StartList startList;
+    private StartList startList;
     @XmlElement(required = true, name = "powerUps")
-    protected PowerUps powerUps;
+    private PowerUps powerUps;
 }

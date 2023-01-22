@@ -79,7 +79,7 @@ public class RankingService {
                     }
 
                     if(speed <= 0){
-                        throw new ValidationException("A horse unexpectedly stopped");
+                        throw new ValidationException("A horse unexpectedly has zero or negative speed before the race is over");
                     }
 
                     if(!participantsMap.containsKey(lane))

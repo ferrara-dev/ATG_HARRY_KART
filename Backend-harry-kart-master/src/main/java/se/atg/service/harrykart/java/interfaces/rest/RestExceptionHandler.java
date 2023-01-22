@@ -5,13 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestController;
 import se.atg.service.harrykart.java.domain.exception.ApiErrorModel;
-import se.atg.service.harrykart.java.domain.exception.HarryKartException;
 import se.atg.service.harrykart.java.domain.exception.ValidationException;
 
 @ControllerAdvice
-@RestController
 public class RestExceptionHandler {
     @ExceptionHandler(ValidationException.class)
     public final ResponseEntity<ApiErrorModel> handle(ValidationException ex) {
@@ -23,14 +20,18 @@ public class RestExceptionHandler {
                         .build()
                 );
     }
-    @ExceptionHandler(HarryKartException.class)
-    public final ResponseEntity<ApiErrorModel> handle(HarryKartException ex) {
+
+
+    @ExceptionHandler(Exception.class)
+    public final ResponseEntity<ApiErrorModel> handle(Exception ex) {
         return ResponseEntity
-                .status(ex.getErrorCode())
-                .body(ApiErrorModel.builder()
-                        .errorMessage(ex.getErrorMessage())
-                        .details(ex.getDetails())
-                        .build()
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(
+                        ApiErrorModel.builder()
+                                .details("UNEXPECTED_EXCEPTION")
+                                .errorMessage("An unexpected error has occurred")
+
+                                .build()
                 );
     }
 }

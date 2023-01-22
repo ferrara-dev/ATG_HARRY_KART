@@ -16,10 +16,10 @@ import java.util.List;
 public class Loop
 {
     @JacksonXmlElementWrapper(useWrapping = false)
-    protected List<Lane> lane;
+    private List<Lane> lane;
 
     @XmlAttribute(name = "number")
-    protected int number;
+    private int number;
 
 
     public List<Lane> getLane() {

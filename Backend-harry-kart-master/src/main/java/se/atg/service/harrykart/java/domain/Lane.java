@@ -26,10 +26,4 @@ public class Lane
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = Integer.parseInt(value);
-    }
-    public void setValue(int value) {
-        this.value = value;
-    }
 }

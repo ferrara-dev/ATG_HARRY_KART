@@ -1,7 +1,6 @@
 package se.atg.service.harrykart.java.domain.exception;
 
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
 
 @Getter
 public class ValidationException extends RuntimeException{
@@ -9,5 +8,6 @@ public class ValidationException extends RuntimeException{
 
     public ValidationException(String message) {
         super(message);
+        this.errorMessage = message;
     }
 }

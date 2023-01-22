@@ -21,7 +21,7 @@ public class StartList
 
     @XmlElement(required = true, name = "participant")
     @JacksonXmlElementWrapper(useWrapping = false)
-    protected List<Participant> participant;
+    private List<Participant> participant;
 
 
     public List<Participant> getParticipant() {

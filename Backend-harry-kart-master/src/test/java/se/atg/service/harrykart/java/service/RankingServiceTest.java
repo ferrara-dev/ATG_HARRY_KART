@@ -27,11 +27,11 @@ public class RankingServiceTest {
     private static final String INPUT1 = "input_1.xml";
     private static final String INPUT2 = "input_2.xml";
 
-    private static final String INPUT3 = "input_3.xml"; // input with shared ranking
-    private static final String INPUT4 = "input_4.xml"; // input with negative speed, one removed
-    private static final String INPUT5 = "input_5.xml"; // input with negative speed, one removed
+    private static final String INPUT3 = "input_3.xml";
+    private static final String INPUT4 = "input_4.xml";
+    private static final String INPUT5 = "input_5.xml";
 
-    private static final String INPUT6 = "input_6.xml"; // input with negative speed, one removed
+    private static final String INPUT6 = "input_6.xml";
 
     private RankingService rankingService;
 
