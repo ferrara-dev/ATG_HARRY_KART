@@ -7,11 +7,6 @@ import java.io.Serializable;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "harryKartType", propOrder = {
-        "numberOfLoops",
-        "startList",
-        "powerUps"
-})
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

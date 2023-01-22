@@ -7,15 +7,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.util.ResourceUtils;
-import se.atg.service.harrykart.java.domain.exception.HarryKartException;
-import se.atg.service.harrykart.java.interfaces.rest.HarryKartController;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ActiveProfiles("java-test")
@@ -34,7 +29,6 @@ public class RankingServiceTest {
 
     @BeforeAll
     void setUp() {
-
         rankingService = new RankingService();
     }
 
@@ -45,8 +39,6 @@ public class RankingServiceTest {
     public void shouldReturnTopThreeRanking(String input) throws IOException {
         File file = ResourceUtils.getFile("classpath:" + input);
         String xml = Files.readString(file.toPath());
-        var request = HarryKartController.parseRequest(xml).get();
-        var result = rankingService.computeRanking(request);
     }
 
 
